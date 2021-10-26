@@ -87,7 +87,7 @@ class Basket {
 		this.items.push(newItem);
 	}
 	removeItem(goodsItem) {
-		let index = this.items.indexOf(s => s.goodItem == goodsItem);
+		let index = this.items.indexOf(s => s.goodItem === goodsItem);
 		if (index > 1) {
 			this.items.slice(index, 1);
 		}
@@ -95,7 +95,7 @@ class Basket {
 
 	getSummCost() {
 		const result = 0;
-		this.items.forEach((item, index, array) => {
+		this.items.reduce((item, index, array) => {
 			result += item.goodItem.price * item.count;
 		})
 
